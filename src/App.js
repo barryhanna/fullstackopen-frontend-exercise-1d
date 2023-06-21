@@ -26,19 +26,26 @@ function App() {
 		}
 	};
 
+	const total = good + bad + neutral;
+	const average = (good * 1 + neutral * 0 + bad * -1) / total;
+	const positive = (good / total) * 100;
+
 	return (
 		<div>
 			<div>
-				<p>give feedback</p>
+				<h3>give feedback</h3>
 				<button onClick={handleClick}>good</button>
 				<button onClick={handleClick}>neutral</button>
 				<button onClick={handleClick}>bad</button>
 			</div>
 			<div>
-				<p>statistics</p>
+				<h3>statistics</h3>
 				<p>good {good}</p>
 				<p>neutral {neutral}</p>
 				<p>bad {bad}</p>
+				<p>all {total}</p>
+				<p>average {average}</p>
+				<p>positive {positive}%</p>
 			</div>
 		</div>
 	);
