@@ -52,11 +52,17 @@ function App() {
 				<button onClick={handleClick}>neutral</button>
 				<button onClick={handleClick}>bad</button>
 			</div>
-			<div>
-				<Statistics
-					stats={{ good, bad, neutral, total, average, positive }}
-				/>
-			</div>
+			{total ? (
+				<div>
+					<Statistics
+						stats={{ good, bad, neutral, total, average, positive }}
+					/>
+				</div>
+			) : (
+				<div>
+					<p>No feedback given</p>
+				</div>
+			)}
 		</div>
 	);
 }
